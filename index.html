@@ -232,39 +232,70 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-24 px-6 bg-white border-t border-softborder">
-        <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-medium text-center mb-6 font-serif">Contactez-moi</h2>
-            <p class="text-center text-softertext font-light mb-16">
-                Pour toute demande ou opportunité, n'hésitez pas à me laisser un message.
-            </p>
-
-            <form id="contact-form" class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label for="nom" class="block text-sm font-medium mb-2 text-softertext">Nom</label>
-                        <input type="text" id="nom" required class="w-full px-4 py-3 bg-softbg border border-softborder rounded-lg focus:outline-none focus:border-softtext transition-colors font-light" />
+    <section id="contact" class="py-24 px-6 bg-softbg border-t border-softborder">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-5 gap-16 items-start">
+                
+                <!-- Info de contact -->
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl md:text-4xl font-medium mb-6 font-serif">Contactez-moi</h2>
+                    <p class="text-softertext font-light mb-10 leading-relaxed">
+                        Pour toute demande de collaboration, question ou simple échange, n'hésitez pas à m'envoyer un message.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-softborder flex items-center justify-center flex-shrink-0 text-softtext">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-softtext mb-1">Email</h4>
+                                <a href="mailto:ayamhtd18@gmail.com" class="text-softertext font-light text-sm hover:text-softtext transition-colors">ayamhtd18@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-white border border-softborder flex items-center justify-center flex-shrink-0 text-softtext">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-medium text-softtext mb-1">WhatsApp</h4>
+                                <a href="https://wa.me/212649269060" target="_blank" class="text-softertext font-light text-sm hover:text-softtext transition-colors">+212 6 49 26 90 60</a>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium mb-2 text-softertext">Email</label>
-                        <input type="email" id="email" required class="w-full px-4 py-3 bg-softbg border border-softborder rounded-lg focus:outline-none focus:border-softtext transition-colors font-light" />
-                    </div>
                 </div>
 
-                <div>
-                    <label for="message" class="block text-sm font-medium mb-2 text-softertext">Message</label>
-                    <textarea id="message" rows="5" required class="w-full px-4 py-3 bg-softbg border border-softborder rounded-lg focus:outline-none focus:border-softtext transition-colors font-light resize-none"></textarea>
+                <!-- Formulaire -->
+                <div class="md:col-span-3 bg-white p-8 md:p-10 rounded-2xl border border-softborder shadow-sm">
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="relative">
+                                <input type="text" id="nom" placeholder="Votre nom" required class="w-full px-0 py-2 bg-transparent border-0 border-b border-softborder focus:ring-0 focus:border-softtext focus:outline-none transition-colors font-light text-sm placeholder-softertext/50" />
+                            </div>
+                            <div class="relative">
+                                <input type="email" id="email" placeholder="Votre email" required class="w-full px-0 py-2 bg-transparent border-0 border-b border-softborder focus:ring-0 focus:border-softtext focus:outline-none transition-colors font-light text-sm placeholder-softertext/50" />
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <textarea id="message" rows="4" placeholder="Votre message..." required class="w-full px-0 py-2 bg-transparent border-0 border-b border-softborder focus:ring-0 focus:border-softtext focus:outline-none transition-colors font-light text-sm resize-none placeholder-softertext/50"></textarea>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <button type="submit" class="flex-[2] bg-softtext text-white py-3 px-6 rounded-full text-sm tracking-wide hover:bg-opacity-90 transition-colors flex justify-center items-center gap-2">
+                                <span id="btn-text">Envoyer le message</span>
+                                <i class="fas fa-arrow-right text-xs"></i>
+                            </button>
+                            <button type="button" id="wa-send-btn" class="flex-1 bg-white border border-softborder text-softtext py-3 px-6 rounded-full text-sm tracking-wide hover:bg-softbg transition-colors flex justify-center items-center gap-2">
+                                <i class="fab fa-whatsapp text-base"></i>
+                                WhatsApp
+                            </button>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <button type="submit" class="flex-1 bg-softtext text-white py-3 rounded-lg text-sm tracking-wide hover:bg-opacity-90 transition-colors">
-                        <span id="btn-text">Envoyer</span>
-                    </button>
-                    <button type="button" id="wa-send-btn" class="flex-1 bg-white border border-softborder text-softtext py-3 rounded-lg text-sm tracking-wide hover:bg-softbg transition-colors">
-                        Via WhatsApp
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </section>
 
