@@ -1,27 +1,28 @@
+/* Custom utilities that are hard to do with tailwind directly */
 
 body {
     box-sizing: border-box;
 }
 
-.gradient-bg {
-    background: linear-gradient(135deg, #FAF9F6 0%, #F5EBE1 50%, #E6D5C3 100%);
-}
-
-.card-hover {
-    transition: all 0.3s ease;
-}
-
-.card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(74, 55, 40, 0.15), 0 10px 10px -5px rgba(74, 55, 40, 0.08);
-}
+/* Animations that are smoother or specific */
 .img1 {
     width: 100px;
     height: auto;
     object-fit: cover;
 }
-.img{
+
+.img {
     width: 30px;
     height: auto;
     object-fit: cover;
+}
+
+/* Fix for autofill styling in webkit browsers to match the dark aesthetic of the contact form */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #3b2b20 inset !important;
+    -webkit-text-fill-color: #FAF9F6 !important;
+    transition: background-color 5000s ease-in-out 0s;
 }
