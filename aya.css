@@ -1,28 +1,15 @@
-/* Custom utilities that are hard to do with tailwind directly */
+/* Custom utilities */
 
 body {
     box-sizing: border-box;
 }
 
-/* Animations that are smoother or specific */
-.img1 {
-    width: 100px;
-    height: auto;
-    object-fit: cover;
-}
-
-.img {
-    width: 30px;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Fix for autofill styling in webkit browsers to match the dark aesthetic of the contact form */
+/* Fix for autofill styling in webkit browsers to match the light aesthetic */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #3b2b20 inset !important;
-    -webkit-text-fill-color: #FAF9F6 !important;
+    -webkit-box-shadow: 0 0 0 30px #FDFBF7 inset !important;
+    -webkit-text-fill-color: #594A42 !important;
     transition: background-color 5000s ease-in-out 0s;
 }

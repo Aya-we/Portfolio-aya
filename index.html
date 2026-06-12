@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="aya.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <title>Mon Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,24 +12,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'offwhite': '#FAF9F6',
-                        'beige': {
-                            100: '#F5EBE1',
-                            200: '#E6D5C3',
-                            300: '#D4C3B3',
-                            400: '#C8B6A6'
-                        },
-                        'choco': {
-                            100: '#8c7668',
-                            200: '#755d4d',
-                            300: '#6e4c3b',
-                            400: '#5e4334',
-                            500: '#5c4033',
-                            600: '#4a3728',
-                            700: '#3b2b20',
-                            800: '#2c1e15',
-                            900: '#1d120a'
-                        }
+                        'softbg': '#FDFBF7',
+                        'softborder': '#EAE0D5',
+                        'softtext': '#594A42',
+                        'softertext': '#8A7E78',
+                        'accent': '#D4C3B3'
                     },
                     fontFamily: {
                         sans: ['Outfit', 'sans-serif'],
@@ -40,101 +27,84 @@
         }
     </script>
 </head>
-<body class="bg-offwhite text-choco-800 font-sans min-h-full antialiased selection:bg-beige-300 selection:text-choco-900">
+<body class="bg-softbg text-softtext font-sans antialiased">
 
-    <!-- Navbar Flottante (Glassmorphism) -->
-    <div class="fixed w-full top-4 z-50 px-4">
-        <nav class="max-w-4xl mx-auto bg-white/70 backdrop-blur-md border border-white/50 shadow-sm rounded-full px-6 py-3 flex justify-between items-center transition-all duration-300">
-            <div class="text-xl font-bold text-choco-800 font-serif tracking-wide">Aya Mouhtad</div>
-            <div class="hidden md:flex space-x-8 items-center">
-                <a href="#accueil" class="text-sm font-medium text-choco-600 hover:text-choco-900 transition-colors">Accueil</a>
-                <a href="#apropos" class="text-sm font-medium text-choco-600 hover:text-choco-900 transition-colors">À propos</a>
-                <a href="#projets" class="text-sm font-medium text-choco-600 hover:text-choco-900 transition-colors">Projets</a>
-                <a href="#contact" class="text-sm font-medium bg-choco-700 text-offwhite px-5 py-2 rounded-full hover:bg-choco-800 hover:shadow-md transition-all">Contact</a>
+    <!-- Navbar Simple -->
+    <nav class="fixed w-full top-0 z-50 bg-softbg/95 backdrop-blur-sm border-b border-softborder transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
+            <div class="text-2xl font-semibold font-serif tracking-wide">Aya Mouhtad</div>
+            
+            <div class="hidden md:flex space-x-10 items-center">
+                <a href="#accueil" class="text-sm tracking-wide text-softertext hover:text-softtext transition-colors">Accueil</a>
+                <a href="#apropos" class="text-sm tracking-wide text-softertext hover:text-softtext transition-colors">À propos</a>
+                <a href="#projets" class="text-sm tracking-wide text-softertext hover:text-softtext transition-colors">Projets</a>
+                <a href="#contact" class="text-sm tracking-wide text-softtext border border-softborder px-6 py-2 rounded-full hover:bg-white transition-colors">Contact</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-choco-800 hover:text-choco-600 transition-colors">
+            
+            <button id="menu-btn" class="md:hidden text-softtext">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-        </nav>
+        </div>
         
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="md:hidden hidden mt-2 max-w-4xl mx-auto bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/50 overflow-hidden">
-            <div class="px-4 py-4 space-y-2">
-                <a href="#accueil" class="block px-4 py-2 rounded-lg text-choco-700 hover:bg-beige-100 font-medium transition-colors">Accueil</a>
-                <a href="#apropos" class="block px-4 py-2 rounded-lg text-choco-700 hover:bg-beige-100 font-medium transition-colors">À propos</a>
-                <a href="#projets" class="block px-4 py-2 rounded-lg text-choco-700 hover:bg-beige-100 font-medium transition-colors">Projets</a>
-                <a href="#contact" class="block px-4 py-2 rounded-lg text-choco-700 hover:bg-beige-100 font-medium transition-colors">Contact</a>
-            </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-softbg border-b border-softborder px-6 py-4 space-y-4">
+            <a href="#accueil" class="block text-softertext hover:text-softtext">Accueil</a>
+            <a href="#apropos" class="block text-softertext hover:text-softtext">À propos</a>
+            <a href="#projets" class="block text-softertext hover:text-softtext">Projets</a>
+            <a href="#contact" class="block text-softtext font-medium">Contact</a>
         </div>
-    </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="accueil" class="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden bg-gradient-to-b from-beige-100/50 to-offwhite">
-        <!-- Décorations floutées -->
-        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-beige-300/40 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-choco-200/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
-        
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="inline-block py-1.5 px-4 rounded-full bg-beige-200/60 text-choco-700 text-sm font-semibold mb-6 tracking-widest uppercase border border-beige-300/50">
-                Développeur Fullstack
-            </span>
-            <h1 class="text-5xl md:text-7xl font-bold text-choco-900 mb-6 font-serif leading-tight">
-                Bonjour, je suis <br/><span class="italic text-choco-600">Aya Mouhtad</span>
+    <section id="accueil" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-softertext tracking-widest uppercase text-sm mb-6">Développeuse Fullstack</p>
+            <h1 class="text-5xl md:text-7xl font-medium mb-8 font-serif leading-tight">
+                Bonjour, je suis <br/><span class="italic text-softertext">Aya Mouhtad</span>
             </h1>
-            <p class="text-lg md:text-xl text-choco-600 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-                Développeur créatif passionné par la création d'expériences numériques exceptionnelles, alliant design élégant et performances techniques.
+            <p class="text-lg text-softertext mb-12 max-w-xl mx-auto leading-relaxed font-light">
+                Une approche minimaliste du web, focalisée sur la clarté, l'ergonomie et l'élégance du code.
             </p>
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <a href="#projets" class="group relative px-8 py-4 bg-choco-800 text-offwhite rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
-                    <span class="relative z-10 font-medium flex items-center justify-center gap-2">
-                        Voir mes projets 
-                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <a href="#projets" class="px-8 py-3 bg-softtext text-softbg rounded-full text-sm tracking-wide hover:bg-opacity-90 transition-all">
+                    Voir mes projets
                 </a>
-                <a href="#contact" class="px-8 py-4 border-2 border-choco-300 text-choco-800 rounded-full hover:bg-beige-200 hover:border-choco-400 transition-all duration-300 font-medium w-full sm:w-auto flex items-center justify-center">
+                <a href="#contact" class="px-8 py-3 border border-softborder bg-white rounded-full text-sm tracking-wide hover:bg-softbg transition-all">
                     Me contacter
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- À propos (Bento Grid Style) -->
-    <section id="apropos" class="py-24 px-4 bg-offwhite">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-choco-900 mb-16 font-serif">Mon Parcours</h2>
+    <!-- À propos -->
+    <section id="apropos" class="py-24 px-6 bg-white border-y border-softborder">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium text-center mb-16 font-serif">À Propos</h2>
             
-            <div class="grid md:grid-cols-3 gap-6 items-start">
-                <!-- Parcours Texte (Prend 2 colonnes) -->
-                <div class="md:col-span-2 bg-beige-100/50 p-10 rounded-3xl border border-beige-200 hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-choco-800 mb-6 font-serif flex items-center gap-3">
-                        <span class="w-10 h-[1px] bg-choco-400"></span> À propos de moi
-                    </h3>
-                    <div class="space-y-4 text-choco-700 leading-relaxed font-light text-lg">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div>
+                    <h3 class="text-xl font-medium mb-6 font-serif">Mon Parcours</h3>
+                    <div class="space-y-4 text-softertext font-light leading-relaxed">
                         <p>
-                            J'ai obtenu un <strong class="font-medium text-choco-900">Bac Sciences Mathématiques B biof</strong> et depuis deux ans, je me suis consacré à l'étude du développement web à l'<strong class="font-medium text-choco-900">ISTA NTIC</strong>.
+                            Issue d'un Bac Sciences Mathématiques, j'étudie depuis deux ans le développement web à l'ISTA NTIC.
                         </p>
                         <p>
-                            Ce domaine me passionne car il me permet de créer des interfaces modernes et interactives, alliant design et performance. J'apprécie résoudre des problèmes, apprendre de nouvelles technologies et relever des défis constants.
-                        </p>
-                        <p>
-                            Mon objectif est de continuer à évoluer dans le web et l'innovation digitale, en mettant ma créativité et mes compétences techniques au service de projets concrets et utiles.
+                            Je conçois des interfaces claires, réactives et performantes. La simplicité et la fonctionnalité sont au cœur de ma démarche de création.
                         </p>
                     </div>
                 </div>
 
-                <!-- Compétences (1 colonne) -->
-                <div class="bg-choco-800 p-10 rounded-3xl shadow-xl text-offwhite flex flex-col justify-center h-full relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-choco-600 rounded-bl-full opacity-20 group-hover:scale-110 transition-transform duration-500"></div>
-                    <h4 class="text-2xl font-semibold mb-8 font-serif relative z-10">Compétences</h4>
-                    <div class="flex flex-wrap gap-3 relative z-10">
-                        <span class="px-4 py-2 border border-choco-600 rounded-full text-sm font-medium tracking-wide hover:bg-choco-700 transition-colors cursor-default">JavaScript</span>
-                        <span class="px-4 py-2 border border-choco-600 rounded-full text-sm font-medium tracking-wide hover:bg-choco-700 transition-colors cursor-default">HTML/CSS</span>
-                        <span class="px-4 py-2 border border-choco-600 rounded-full text-sm font-medium tracking-wide hover:bg-choco-700 transition-colors cursor-default">React</span>
-                        <span class="px-4 py-2 border border-choco-600 rounded-full text-sm font-medium tracking-wide hover:bg-choco-700 transition-colors cursor-default">Node.js</span>
-                        <span class="px-4 py-2 border border-choco-600 rounded-full text-sm font-medium tracking-wide hover:bg-choco-700 transition-colors cursor-default">Python</span>
-                        <span class="px-4 py-2 border border-choco-600 rounded-full text-sm font-medium tracking-wide hover:bg-choco-700 transition-colors cursor-default">PHP</span>
+                <div>
+                    <h3 class="text-xl font-medium mb-6 font-serif">Mes Compétences</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-1.5 border border-softborder text-softertext text-sm rounded-full">JavaScript</span>
+                        <span class="px-4 py-1.5 border border-softborder text-softertext text-sm rounded-full">HTML/CSS</span>
+                        <span class="px-4 py-1.5 border border-softborder text-softertext text-sm rounded-full">React</span>
+                        <span class="px-4 py-1.5 border border-softborder text-softertext text-sm rounded-full">Node.js</span>
+                        <span class="px-4 py-1.5 border border-softborder text-softertext text-sm rounded-full">Python</span>
+                        <span class="px-4 py-1.5 border border-softborder text-softertext text-sm rounded-full">PHP</span>
                     </div>
                 </div>
             </div>
@@ -142,152 +112,125 @@
     </section>
 
     <!-- Projets -->
-    <section id="projets" class="py-24 px-4 bg-beige-100/30">
+    <section id="projets" class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center text-choco-900 mb-16 font-serif">Mes Projets</h2>
+            <h2 class="text-3xl md:text-4xl font-medium text-center mb-16 font-serif">Mes Projets</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                
                 <!-- Projet 1 -->
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-beige-200 flex flex-col">
-                    <div class="h-56 rounded-2xl overflow-hidden bg-beige-100 mb-6 relative">
-                        <img src="liste-de-controle.png" alt="Gestion des tâches" class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500">
+                <div class="bg-white border border-softborder p-4 rounded-xl flex flex-col">
+                    <div class="aspect-[4/3] w-full bg-softbg rounded-lg mb-6 overflow-hidden flex items-center justify-center p-4">
+                        <img src="liste-de-controle.png" alt="Gestion des tâches" class="w-full h-full object-contain">
                     </div>
-                    <div class="px-2 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-choco-900 mb-2 font-serif">Site de gestion des tâches</h3>
-                        <p class="text-choco-600 mb-6 font-light text-sm flex-grow">Application permettant d'ajouter, gérer et supprimer des tâches quotidiennes.</p>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-lg font-medium mb-2 font-serif">Gestion des tâches</h3>
+                        <p class="text-softertext text-sm font-light mb-6 flex-grow">Une application web pour organiser son quotidien de manière simple et efficace.</p>
                         
-                        <div class="flex gap-2 mb-6 flex-wrap">
-                            <span class="px-3 py-1 bg-offwhite border border-beige-200 text-choco-700 text-xs rounded-full font-medium">HTML, CSS</span>
-                            <span class="px-3 py-1 bg-offwhite border border-beige-200 text-choco-700 text-xs rounded-full font-medium">JS</span>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-xs text-softertext uppercase tracking-wider">HTML</span>
+                            <span class="text-xs text-softertext uppercase tracking-wider">CSS</span>
+                            <span class="text-xs text-softertext uppercase tracking-wider">JS</span>
                         </div>
-                        <a href="https://taskmanager-roan-phi.vercel.app/" target="_blank" class="inline-flex items-center gap-2 text-choco-800 font-semibold text-sm hover:text-choco-500 transition-colors group/link mt-auto">
-                            Voir le projet 
-                            <svg class="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        
+                        <a href="https://taskmanager-roan-phi.vercel.app/" target="_blank" class="text-sm font-medium border-b border-softborder pb-1 hover:text-softertext transition-colors inline-block w-max">
+                            Visiter le site
                         </a>
                     </div>
                 </div>
 
                 <!-- Projet 2 -->
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-beige-200 flex flex-col">
-                    <div class="h-56 rounded-2xl overflow-hidden bg-choco-900 mb-6 relative">
-                        <img src="Snake.jpeg" alt="Snake game" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500">
+                <div class="bg-white border border-softborder p-4 rounded-xl flex flex-col">
+                    <div class="aspect-[4/3] w-full bg-softbg rounded-lg mb-6 overflow-hidden flex items-center justify-center">
+                        <img src="Snake.jpeg" alt="Snake game" class="w-full h-full object-cover">
                     </div>
-                    <div class="px-2 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-choco-900 mb-2 font-serif">Web Gaming</h3>
-                        <p class="text-choco-600 mb-6 font-light text-sm flex-grow">Jeu classique Snake jouable en ligne directement depuis le navigateur.</p>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-lg font-medium mb-2 font-serif">Jeu Snake</h3>
+                        <p class="text-softertext text-sm font-light mb-6 flex-grow">Reproduction du jeu classique Snake en ligne pour le navigateur.</p>
                         
-                        <div class="flex gap-2 mb-6 flex-wrap">
-                            <span class="px-3 py-1 bg-offwhite border border-beige-200 text-choco-700 text-xs rounded-full font-medium">HTML, CSS</span>
-                            <span class="px-3 py-1 bg-offwhite border border-beige-200 text-choco-700 text-xs rounded-full font-medium">JS</span>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-xs text-softertext uppercase tracking-wider">HTML</span>
+                            <span class="text-xs text-softertext uppercase tracking-wider">CSS</span>
+                            <span class="text-xs text-softertext uppercase tracking-wider">JS</span>
                         </div>
-                        <a href="https://snake-game-seven-rose.vercel.app/" target="_blank" class="inline-flex items-center gap-2 text-choco-800 font-semibold text-sm hover:text-choco-500 transition-colors group/link mt-auto">
-                            Voir le projet 
-                            <svg class="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        
+                        <a href="https://snake-game-seven-rose.vercel.app/" target="_blank" class="text-sm font-medium border-b border-softborder pb-1 hover:text-softertext transition-colors inline-block w-max">
+                            Visiter le site
                         </a>
                     </div>
                 </div>
 
                 <!-- Projet 3 (Edusmart) -->
-                <div class="group bg-white rounded-3xl p-4 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-beige-200 flex flex-col">
-                    <div class="h-56 rounded-2xl overflow-hidden bg-beige-200 mb-6 relative shadow-inner">
-                        <img src="edusmart.png" alt="Edusmart" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                <div class="bg-white border border-softborder p-4 rounded-xl flex flex-col">
+                    <div class="aspect-[4/3] w-full bg-softbg rounded-lg mb-6 overflow-hidden flex items-center justify-center">
+                        <img src="edusmart.png" alt="Edusmart" class="w-full h-full object-cover object-top">
                     </div>
-                    <div class="px-2 flex-grow flex flex-col">
-                        <h3 class="text-xl font-bold text-choco-900 mb-2 font-serif">Edusmart</h3>
-                        <p class="text-choco-600 mb-6 font-light text-sm flex-grow">Plateforme éducative moderne pour l'apprentissage et la gestion scolaire.</p>
+                    <div class="flex-grow flex flex-col">
+                        <h3 class="text-lg font-medium mb-2 font-serif">Edusmart</h3>
+                        <p class="text-softertext text-sm font-light mb-6 flex-grow">Plateforme éducative pour centraliser et simplifier la gestion scolaire.</p>
                         
-                        <div class="flex gap-2 mb-6 flex-wrap">
-                            <span class="px-3 py-1 bg-offwhite border border-beige-200 text-choco-700 text-xs rounded-full font-medium">HTML, CSS</span>
-                            <span class="px-3 py-1 bg-offwhite border border-beige-200 text-choco-700 text-xs rounded-full font-medium">JS</span>
+                        <div class="flex gap-2 mb-6">
+                            <span class="text-xs text-softertext uppercase tracking-wider">HTML</span>
+                            <span class="text-xs text-softertext uppercase tracking-wider">CSS</span>
+                            <span class="text-xs text-softertext uppercase tracking-wider">JS</span>
                         </div>
-                        <a href="https://pfe-edusmart-vcyv.vercel.app/" target="_blank" class="inline-flex items-center gap-2 text-choco-800 font-semibold text-sm hover:text-choco-500 transition-colors group/link mt-auto">
-                            Voir le projet 
-                            <svg class="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        
+                        <a href="https://pfe-edusmart-vcyv.vercel.app/" target="_blank" class="text-sm font-medium border-b border-softborder pb-1 hover:text-softertext transition-colors inline-block w-max">
+                            Visiter le site
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-24 px-4 bg-choco-900 text-offwhite relative overflow-hidden">
-        <!-- Déco d'arrière plan -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10 pointer-events-none">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="absolute w-full h-full">
-                <path d="M0,0 L100,100 L0,100 Z" fill="#8c7668" />
-            </svg>
-        </div>
+    <section id="contact" class="py-24 px-6 bg-white border-t border-softborder">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-medium text-center mb-6 font-serif">Contactez-moi</h2>
+            <p class="text-center text-softertext font-light mb-16">
+                Pour toute demande ou opportunité, n'hésitez pas à me laisser un message.
+            </p>
 
-        <div class="max-w-5xl mx-auto relative z-10">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 font-serif">Contactez-moi</h2>
-                <p class="text-choco-200 max-w-2xl mx-auto font-light">Vous avez un projet en tête ? Discutons-en pour concrétiser vos idées.</p>
-            </div>
-
-            <div class="bg-choco-800/80 backdrop-blur-sm p-8 md:p-12 rounded-3xl shadow-2xl border border-choco-700 max-w-3xl mx-auto">
-                <form id="contact-form" class="space-y-8">
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Nom -->
-                        <div class="relative group">
-                            <input type="text" id="nom" placeholder=" " required class="block w-full px-0 py-3 text-offwhite bg-transparent border-0 border-b-2 border-choco-600 appearance-none focus:outline-none focus:ring-0 focus:border-beige-300 peer transition-colors" />
-                            <label for="nom" class="absolute text-choco-300 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-beige-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 flex items-center gap-2">
-                                <i class="fas fa-user text-sm"></i> Votre nom
-                            </label>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="relative group">
-                            <input type="email" id="email" placeholder=" " required class="block w-full px-0 py-3 text-offwhite bg-transparent border-0 border-b-2 border-choco-600 appearance-none focus:outline-none focus:ring-0 focus:border-beige-300 peer transition-colors" />
-                            <label for="email" class="absolute text-choco-300 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-beige-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 flex items-center gap-2">
-                                <i class="fas fa-envelope text-sm"></i> Votre email
-                            </label>
-                        </div>
+            <form id="contact-form" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nom" class="block text-sm font-medium mb-2 text-softertext">Nom</label>
+                        <input type="text" id="nom" required class="w-full px-4 py-3 bg-softbg border border-softborder rounded-lg focus:outline-none focus:border-softtext transition-colors font-light" />
                     </div>
-
-                    <!-- Message -->
-                    <div class="relative group mt-10">
-                        <textarea id="message" rows="4" placeholder=" " required class="block w-full px-0 py-3 text-offwhite bg-transparent border-0 border-b-2 border-choco-600 appearance-none focus:outline-none focus:ring-0 focus:border-beige-300 peer transition-colors resize-none"></textarea>
-                        <label for="message" class="absolute text-choco-300 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-beige-300 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 flex items-center gap-2">
-                            <i class="fas fa-comment text-sm"></i> Votre message
-                        </label>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2 text-softertext">Email</label>
+                        <input type="email" id="email" required class="w-full px-4 py-3 bg-softbg border border-softborder rounded-lg focus:outline-none focus:border-softtext transition-colors font-light" />
                     </div>
+                </div>
 
-                    <!-- Boutons -->
-                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <button type="submit" class="flex-1 bg-beige-200 text-choco-900 py-4 rounded-xl font-bold shadow-lg hover:bg-white hover:-translate-y-1 transition-all duration-300 flex justify-center items-center gap-2">
-                            <span>Envoyer le message</span>
-                            <i class="fas fa-paper-plane text-sm"></i>
-                        </button>
+                <div>
+                    <label for="message" class="block text-sm font-medium mb-2 text-softertext">Message</label>
+                    <textarea id="message" rows="5" required class="w-full px-4 py-3 bg-softbg border border-softborder rounded-lg focus:outline-none focus:border-softtext transition-colors font-light resize-none"></textarea>
+                </div>
 
-                        <button type="button" id="wa-send-btn" class="flex-1 bg-transparent border border-choco-500 text-offwhite py-4 rounded-xl font-semibold hover:bg-choco-700 hover:border-choco-400 transition-colors flex justify-center items-center gap-2" title="Envoyer via WhatsApp">
-                            <i class="fab fa-whatsapp text-lg"></i>
-                            <span>WhatsApp</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <button type="submit" class="flex-1 bg-softtext text-white py-3 rounded-lg text-sm tracking-wide hover:bg-opacity-90 transition-colors">
+                        <span id="btn-text">Envoyer</span>
+                    </button>
+                    <button type="button" id="wa-send-btn" class="flex-1 bg-white border border-softborder text-softtext py-3 rounded-lg text-sm tracking-wide hover:bg-softbg transition-colors">
+                        Via WhatsApp
+                    </button>
+                </div>
+            </form>
         </div>
     </section>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- Footer -->
-    <footer class="bg-choco-900 text-choco-300 py-10 px-4 border-t border-choco-800">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="text-xl font-bold font-serif text-beige-200 tracking-wider">Aya.</div>
-            
-            <div class="flex gap-8">
-                <a href="mailto:ayamhtd18@gmail.com" class="hover:text-offwhite transition-colors flex items-center gap-2">
-                    <i class="fas fa-envelope"></i> ayamhtd18@gmail.com
-                </a>
-                <a href="https://wa.me/212649269060" target="_blank" class="hover:text-offwhite transition-colors flex items-center gap-2">
-                    <i class="fab fa-whatsapp"></i> +212 6 49 26 90 60
-                </a>
-            </div>
-
-            <p class="text-sm">© 2025 Aya Portfolio. Tous droits réservés.</p>
+    <footer class="py-12 px-6 bg-softbg border-t border-softborder text-center text-softertext font-light text-sm">
+        <div class="flex justify-center gap-8 mb-6">
+            <a href="mailto:ayamhtd18@gmail.com" class="hover:text-softtext transition-colors">ayamhtd18@gmail.com</a>
+            <a href="https://wa.me/212649269060" target="_blank" class="hover:text-softtext transition-colors">+212 6 49 26 90 60</a>
         </div>
+        <p>© 2025 Aya Portfolio. Tous droits réservés.</p>
     </footer>
 
     <script>
@@ -316,7 +259,7 @@
             });
         });
 
-        // Soumission du formulaire
+        // Soumission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             const nom = document.getElementById('nom').value;
@@ -328,9 +271,9 @@
                 const span = button.querySelector('span');
                 const originalText = span.textContent;
                 
-                span.textContent = 'Envoyé !';
-                button.style.backgroundColor = '#d1fae5'; // green-100
-                button.style.color = '#065f46'; // green-900
+                span.textContent = 'Envoyé avec succès';
+                button.style.backgroundColor = '#EAE0D5';
+                button.style.color = '#594A42';
                 
                 setTimeout(() => {
                     span.textContent = originalText;
@@ -349,37 +292,10 @@
                 const email = (document.getElementById('email') || {}).value || '';
                 const message = (document.getElementById('message') || {}).value || '';
 
-                let text = `Bonjour, je m'appelle ${name || '[Nom non fourni]'}.`;
-                if (email) text += `\nEmail: ${email}`;
-                if (message) text += `\n\nMessage: ${message}`;
-
-                const phone = '212649269060';
-                const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-                window.open(url, '_blank');
+                let text = `Bonjour, je m'appelle ${name || '[Nom non fourni]'}.\nEmail: ${email}\n\nMessage: ${message}`;
+                window.open(`https://wa.me/212649269060?text=${encodeURIComponent(text)}`, '_blank');
             });
         }
-
-        // Animation au défilement
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-            observer.observe(section);
-        });
     </script>
 </body>
 </html>
