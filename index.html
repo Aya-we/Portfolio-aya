@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="aya.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <title>Mon Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -11,18 +12,28 @@
             theme: {
                 extend: {
                     colors: {
-                        'mauve': {
-                            50: '#faf7ff',
-                            100: '#f3edff',
-                            200: '#e9ddff',
-                            300: '#d8c1ff',
-                            400: '#c197ff',
-                            500: '#a855f7',
-                            600: '#9333ea',
-                            700: '#7c3aed',
-                            800: '#6b21a8',
-                            900: '#581c87'
+                        'offwhite': '#FAF9F6',
+                        'beige': {
+                            100: '#F5EBE1',
+                            200: '#E6D5C3',
+                            300: '#D4C3B3',
+                            400: '#C8B6A6'
+                        },
+                        'choco': {
+                            100: '#8c7668',
+                            200: '#755d4d',
+                            300: '#6e4c3b',
+                            400: '#5e4334',
+                            500: '#5c4033',
+                            600: '#4a3728',
+                            700: '#3b2b20',
+                            800: '#2c1e15',
+                            900: '#1d120a'
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
@@ -30,18 +41,18 @@
     </script>
     
 </head>
-<body class="gradient-bg min-h-full">
+<body class="gradient-bg min-h-full font-sans">
     <nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="text-2xl font-bold text-mauve-700">Aya Mouhtad</div>
+                <div class="text-2xl font-bold text-choco-700">Aya Mouhtad</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#accueil" class="text-mauve-600 hover:text-mauve-800 transition-colors">Accueil</a>
-                    <a href="#apropos" class="text-mauve-600 hover:text-mauve-800 transition-colors">À propos</a>
-                    <a href="#projets" class="text-mauve-600 hover:text-mauve-800 transition-colors">Projets</a>
-                    <a href="#contact" class="text-mauve-600 hover:text-mauve-800 transition-colors">Contact</a>
+                    <a href="#accueil" class="text-choco-600 hover:text-choco-800 transition-colors">Accueil</a>
+                    <a href="#apropos" class="text-choco-600 hover:text-choco-800 transition-colors">À propos</a>
+                    <a href="#projets" class="text-choco-600 hover:text-choco-800 transition-colors">Projets</a>
+                    <a href="#contact" class="text-choco-600 hover:text-choco-800 transition-colors">Contact</a>
                 </div>
-                <button id="menu-btn" class="md:hidden text-mauve-600">
+                <button id="menu-btn" class="md:hidden text-choco-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -50,27 +61,27 @@
         </div>
         <div id="mobile-menu" class="md:hidden hidden bg-white/90 backdrop-blur-md">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#accueil" class="block px-3 py-2 text-mauve-600 hover:text-mauve-800">Accueil</a>
-                <a href="#apropos" class="block px-3 py-2 text-mauve-600 hover:text-mauve-800">À propos</a>
-                <a href="#projets" class="block px-3 py-2 text-mauve-600 hover:text-mauve-800">Projets</a>
-                <a href="#contact" class="block px-3 py-2 text-mauve-600 hover:text-mauve-800">Contact</a>
+                <a href="#accueil" class="block px-3 py-2 text-choco-600 hover:text-choco-800">Accueil</a>
+                <a href="#apropos" class="block px-3 py-2 text-choco-600 hover:text-choco-800">À propos</a>
+                <a href="#projets" class="block px-3 py-2 text-choco-600 hover:text-choco-800">Projets</a>
+                <a href="#contact" class="block px-3 py-2 text-choco-600 hover:text-choco-800">Contact</a>
             </div>
         </div>
     </nav>
     <section id="accueil" class="min-h-full  px-4 py-20">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8">
             <div class="md:w-1/2 text-center md:text-left">
-                <h1 class="text-5xl md:text-6xl font-bold text-mauve-800 mb-6">
-                    Bonjour, je suis <span class="text-mauve-600">Aya </span>
+                <h1 class="text-5xl md:text-6xl font-bold text-choco-800 mb-6 font-serif">
+                    Bonjour, je suis <span class="text-choco-600">Aya </span>
                 </h1>
-                <p class="text-xl text-mauve-700 mb-8 leading-relaxed">
+                <p class="text-xl text-choco-700 mb-8 leading-relaxed">
                     Développeur créatif passionné par la création d'expériences numériques exceptionnelles
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#projets" class="bg-mauve-600 text-white px-8 py-3 rounded-full hover:bg-mauve-700 transition-colors">
+                    <a href="#projets" class="bg-choco-600 text-white px-8 py-3 rounded-full hover:bg-choco-700 transition-colors">
                         Voir mes projets
                     </a>
-                    <a href="#contact" class="border-2 border-mauve-600 text-mauve-600 px-8 py-3 rounded-full hover:bg-mauve-600 hover:text-white transition-colors">
+                    <a href="#contact" class="border-2 border-choco-600 text-choco-600 px-8 py-3 rounded-full hover:bg-choco-600 hover:text-white transition-colors">
                         Me contacter
                     </a>
                 </div>
@@ -80,31 +91,31 @@
   <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-start">
     
     <div class="bg-white/70 p-8 rounded-xl shadow-lg flex-1">
-      <h3 class="text-2xl font-bold text-mauve-700 mb-4 text-center">Mon Parcours</h3>
+      <h3 class="text-2xl font-bold text-choco-700 mb-4 text-center font-serif">Mon Parcours</h3>
 
-      <p class="text-mauve-600 mb-4 leading-relaxed">
+      <p class="text-choco-600 mb-4 leading-relaxed">
         J'ai obtenu un <strong>Bac Sciences Mathématiques B biof</strong> et depuis deux ans, je me suis consacré à l'étude du développement web à l'<strong>ISTA NTIC</strong>.
       </p>
 
-      <p class="text-mauve-600 mb-4 leading-relaxed">
+      <p class="text-choco-600 mb-4 leading-relaxed">
         Ce domaine me passionne car il me permet de créer des interfaces modernes et interactives, alliant design et performance. J'apprécie résoudre des problèmes, apprendre de nouvelles technologies et relever des défis constants.
       </p>
 
-      <p class="text-mauve-600 leading-relaxed">
+      <p class="text-choco-600 leading-relaxed">
         Mon objectif est de continuer à évoluer dans le web et l'innovation digitale, en mettant ma créativité et mes compétences techniques au service de projets concrets et utiles.
       </p>
     </div>
 
     <div class="bg-white/70 p-6 rounded-xl shadow-lg flex-1">
-      <h4 class="text-2xl font-bold text-mauve-700 mb-4 text-center">Mes Compétences</h4>
+      <h4 class="text-2xl font-bold text-choco-700 mb-4 text-center font-serif">Mes Compétences</h4>
 
       <div class="flex flex-wrap justify-center gap-3">
-        <span class="bg-mauve-200 text-mauve-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
-        <span class="bg-mauve-200 text-mauve-800 px-3 py-1 rounded-full font-medium">HTML/CSS</span>
-        <span class="bg-mauve-200 text-mauve-800 px-3 py-1 rounded-full font-medium">React</span>
-        <span class="bg-mauve-200 text-mauve-800 px-3 py-1 rounded-full font-medium">Node.js</span>
-        <span class="bg-mauve-200 text-mauve-800 px-3 py-1 rounded-full font-medium">Python</span>
-        <span class="bg-mauve-200 text-mauve-800 px-3 py-1 rounded-full font-medium">PHP</span>
+        <span class="bg-beige-200 text-choco-800 px-3 py-1 rounded-full font-medium">JavaScript</span>
+        <span class="bg-beige-200 text-choco-800 px-3 py-1 rounded-full font-medium">HTML/CSS</span>
+        <span class="bg-beige-200 text-choco-800 px-3 py-1 rounded-full font-medium">React</span>
+        <span class="bg-beige-200 text-choco-800 px-3 py-1 rounded-full font-medium">Node.js</span>
+        <span class="bg-beige-200 text-choco-800 px-3 py-1 rounded-full font-medium">Python</span>
+        <span class="bg-beige-200 text-choco-800 px-3 py-1 rounded-full font-medium">PHP</span>
       </div>
     </div>
 
@@ -115,35 +126,35 @@
     
     <section id="projets" class="py-20 px-4 bg-white/30">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center text-mauve-800 mb-16">Mes Projets</h2>
+            <h2 class="text-4xl font-bold text-center text-choco-800 mb-16 font-serif">Mes Projets</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="bg-white/80 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-mauve-200 to-mauve-300 flex items-center justify-center">
+                    <div class="h-48 bg-gradient-to-br from-beige-200 to-beige-300 flex items-center justify-center">
                         <img src="liste-de-controle.png" alt="" class="img1">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-mauve-800 mb-3">Site de gestion des taches</h3>
-                        <p class="text-mauve-600 mb-4"> Application de gestion de tâches permettant d'ajouter et supprimer des tâches.</p>
+                        <h3 class="text-xl font-semibold text-choco-800 mb-3 font-serif">Site de gestion des taches</h3>
+                        <p class="text-choco-600 mb-4"> Application de gestion de tâches permettant d'ajouter et supprimer des tâches.</p>
                         <div class="flex gap-2 mb-4">
-                            <span class="px-3 py-1 bg-mauve-100 text-mauve-700 text-sm rounded-full">Html, css</span>
-                            <span class="px-3 py-1 bg-mauve-100 text-mauve-700 text-sm rounded-full">js</span>
+                            <span class="px-3 py-1 bg-beige-100 text-choco-700 text-sm rounded-full">Html, css</span>
+                            <span class="px-3 py-1 bg-beige-100 text-choco-700 text-sm rounded-full">js</span>
                         </div>
-                        <button class="text-mauve-600 hover:text-mauve-800 font-medium"><a href="https://taskmanager-roan-phi.vercel.app/">Voir le projet →</a></button>
+                        <button class="text-choco-600 hover:text-choco-800 font-medium"><a href="https://taskmanager-roan-phi.vercel.app/">Voir le projet →</a></button>
                     </div>
                 </div>
 
                 <div class="bg-white/80 rounded-xl overflow-hidden card-hover">
-                    <div class="h-48 bg-gradient-to-br from-mauve-200 to-mauve-300 flex items-center justify-center">
+                    <div class="h-48 bg-gradient-to-br from-beige-200 to-beige-300 flex items-center justify-center">
                         <img src="Snake.jpeg" alt="">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-mauve-800 mb-3">web gaming</h3>
-                        <p class="text-mauve-600 mb-4">Jeu Snake en ligne </p>
+                        <h3 class="text-xl font-semibold text-choco-800 mb-3 font-serif">web gaming</h3>
+                        <p class="text-choco-600 mb-4">Jeu Snake en ligne </p>
                         <div class="flex gap-2 mb-4">
-                            <span class="px-3 py-1 bg-mauve-100 text-mauve-700 text-sm rounded-full">Html, css</span>
-                            <span class="px-3 py-1 bg-mauve-100 text-mauve-700 text-sm rounded-full">js</span>
+                            <span class="px-3 py-1 bg-beige-100 text-choco-700 text-sm rounded-full">Html, css</span>
+                            <span class="px-3 py-1 bg-beige-100 text-choco-700 text-sm rounded-full">js</span>
                         </div>
-                        <button class="text-mauve-600 hover:text-mauve-800 font-medium"><a href="https://snake-game-seven-rose.vercel.app/">Voir le projet →</a></button>
+                        <button class="text-choco-600 hover:text-choco-800 font-medium"><a href="https://snake-game-seven-rose.vercel.app/">Voir le projet →</a></button>
                     </div>
                 </div>
 
@@ -152,26 +163,26 @@
                         <img src="edusmart.png" alt="Edusmart" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-mauve-800 mb-3">Edusmart</h3>
-                        <p class="text-mauve-600 mb-4">Plateforme éducative pour l'apprentissage et la gestion.</p>
+                        <h3 class="text-xl font-semibold text-choco-800 mb-3 font-serif">Edusmart</h3>
+                        <p class="text-choco-600 mb-4">Plateforme éducative pour l'apprentissage et la gestion.</p>
                         <div class="flex gap-2 mb-4">
-                            <span class="px-3 py-1 bg-mauve-100 text-mauve-700 text-sm rounded-full">Html, css</span>
-                            <span class="px-3 py-1 bg-mauve-100 text-mauve-700 text-sm rounded-full">js</span>
+                            <span class="px-3 py-1 bg-beige-100 text-choco-700 text-sm rounded-full">Html, css</span>
+                            <span class="px-3 py-1 bg-beige-100 text-choco-700 text-sm rounded-full">js</span>
                         </div>
-                        <button class="text-mauve-600 hover:text-mauve-800 font-medium"><a href="https://pfe-edusmart-vcyv.vercel.app/" target="_blank">Voir le projet →</a></button>
+                        <button class="text-choco-600 hover:text-choco-800 font-medium"><a href="https://pfe-edusmart-vcyv.vercel.app/" target="_blank">Voir le projet →</a></button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-   <section id="contact" class="py-20 px-4 bg-gradient-to-br from-mauve-100 to-mauve-200">
+   <section id="contact" class="py-20 px-4 bg-gradient-to-br from-beige-100 to-beige-200">
   <div class="max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold text-center text-mauve-800 mb-16">Contactez-moi</h2>
+    <h2 class="text-4xl font-bold text-center text-choco-800 mb-16 font-serif">Contactez-moi</h2>
 
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <h3 class="text-2xl font-semibold text-mauve-700 mb-6">Parlons de votre projet</h3>
-        <p class="text-mauve-600 mb-8 leading-relaxed">
+        <h3 class="text-2xl font-semibold text-choco-700 mb-6 font-serif">Parlons de votre projet</h3>
+        <p class="text-choco-600 mb-8 leading-relaxed">
           Vous avez un projet en tête ? Pour que nous puissions en discuter et concrétiser vos idées, merci de m'envoyer un message via ce formulaire.
 
         </p>
@@ -179,51 +190,51 @@
       </div>
 
     <form id="contact-form" class="bg-transparent p-3 md:p-4 rounded-2xl shadow-none border-0 max-w-xs w-full mx-auto">
-        <h3 class="text-2xl font-semibold text-mauve-700 mb-8 text-center">Envoyez un message</h3>
+        <h3 class="text-2xl font-semibold text-choco-700 mb-8 text-center font-serif">Envoyez un message</h3>
 
         <div class="space-y-5">
           <div>
-            <label for="nom" class="block text-mauve-700 font-medium mb-2">Nom</label>
+            <label for="nom" class="block text-choco-700 font-medium mb-2">Nom</label>
             <div class="relative">
               <input
                 type="text"
                 id="nom"
-                placeholder="Votre nom complet" class="w-full pl-10 pr-4 py-2 rounded-lg text-mauve-800 placeholder-mauve-500 focus:outline-none focus:ring-2 focus:ring-mauve-200 transition duration-200"
+                placeholder="Votre nom complet" class="w-full pl-10 pr-4 py-2 rounded-lg text-choco-800 placeholder-offwhite0 focus:outline-none focus:ring-2 focus:ring-beige-200 transition duration-200"
                                                 style="background: linear-gradient(90deg, rgba(255,255,255,0.88), rgba(217,203,255,0.55));"
               />
-              <i class="absolute left-3 top-3.5 text-mauve-400 fas fa-user"></i>
+              <i class="absolute left-3 top-3.5 text-beige-400 fas fa-user"></i>
             </div>
           </div>
 
           <div>
-            <label for="email" class="block text-mauve-700 font-medium mb-2">Email</label>
+            <label for="email" class="block text-choco-700 font-medium mb-2">Email</label>
             <div class="relative">
               <input
                 type="email"
                 id="email"
-                placeholder="exemple@email.com" class="w-full pl-10 pr-4 py-2 rounded-lg text-mauve-800 placeholder-mauve-500 focus:outline-none focus:ring-2 focus:ring-mauve-200 transition duration-200"
+                placeholder="exemple@email.com" class="w-full pl-10 pr-4 py-2 rounded-lg text-choco-800 placeholder-offwhite0 focus:outline-none focus:ring-2 focus:ring-beige-200 transition duration-200"
                                                 style="background: linear-gradient(90deg, rgba(255,255,255,0.88), rgba(217,203,255,0.55));"
               />
-              <i class="absolute left-3 top-3.5 text-mauve-400 fas fa-envelope"></i>
+              <i class="absolute left-3 top-3.5 text-beige-400 fas fa-envelope"></i>
             </div>
           </div>
 
           <div>
-            <label for="message" class="block text-mauve-700 font-medium mb-2">Message</label>
+            <label for="message" class="block text-choco-700 font-medium mb-2">Message</label>
             <div class="relative">
               <textarea
                 id="message"
                 rows="4"
-                placeholder="Écrivez votre message ici..." class="w-full pl-10 pr-4 py-2 rounded-lg text-mauve-800 placeholder-mauve-500 focus:outline-none focus:ring-2 focus:ring-mauve-200 transition duration-200" style="background: linear-gradient(90deg, rgba(255,255,255,0.88), rgba(217,203,255,0.55));"
+                placeholder="Écrivez votre message ici..." class="w-full pl-10 pr-4 py-2 rounded-lg text-choco-800 placeholder-offwhite0 focus:outline-none focus:ring-2 focus:ring-beige-200 transition duration-200" style="background: linear-gradient(90deg, rgba(255,255,255,0.88), rgba(217,203,255,0.55));"
               ></textarea>
-              <i class="absolute left-3 top-3 text-mauve-400 fas fa-comment"></i>
+              <i class="absolute left-3 top-3 text-beige-400 fas fa-comment"></i>
             </div>
           </div>
 
                     <div class="flex gap-3">
                         <button
                             type="submit"
-                            class="flex-1 bg-gradient-to-r from-mauve-600 to-mauve-700 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+                            class="flex-1 bg-gradient-to-r from-choco-600 to-choco-700 text-white py-3 rounded-xl font-semibold shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
                         >
                             Envoyer le message
                         </button>
@@ -231,7 +242,7 @@
                         <button
                             type="button"
                             id="wa-send-btn"
-                            class="flex-1 bg-white/90 text-mauve-700 py-3 rounded-xl font-semibold border border-mauve-200 hover:bg-white transition-colors"
+                            class="flex-1 bg-white/90 text-choco-700 py-3 rounded-xl font-semibold border border-beige-200 hover:bg-white transition-colors"
                             title="Envoyer via WhatsApp"
                         >
                             Envoyer via WhatsApp
@@ -244,7 +255,7 @@
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 
-    <footer class="bg-mauve-800 text-white py-8 px-4">
+    <footer class="bg-choco-800 text-white py-8 px-4">
   <div class="max-w-6xl mx-auto space-y-6">
 
     <div class="flex flex-col md:flex-row md:justify-around gap-6">
@@ -265,7 +276,7 @@
         <div>
           <p class="font-medium text-white">Téléphone</p>
           <p class="text-gray-200">
-            <a href="https://wa.me/212649269060" target="_blank" rel="noopener noreferrer" class="hover:text-mauve-300 transition-colors">
+            <a href="https://wa.me/212649269060" target="_blank" rel="noopener noreferrer" class="hover:text-beige-300 transition-colors">
               +212 6 49 26 90 60
             </a>
           </p>
