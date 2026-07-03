@@ -245,7 +245,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                 <!-- Logo GHAZALSAUF -->
-                <div class="bg-white border border-softborder p-4 rounded-xl flex flex-col">
+                <div class="bg-white border border-softborder p-4 rounded-xl flex flex-col cursor-pointer brand-card transition-transform hover:scale-[1.02]" data-brand="ghazalsauf">
                     <div class="aspect-[4/3] w-full bg-softbg rounded-lg mb-6 overflow-hidden flex items-center justify-center p-4">
                         <img src="logo-ghazalsauf.png" alt="Logo GHAZALSAUF" class="w-full h-full object-contain">
                     </div>
@@ -338,7 +338,83 @@
         <p>© 2025 Aya Portfolio. Tous droits réservés.</p>
     </footer>
 
+    <!-- Modal Galerie Marques -->
+    <div id="brand-modal" class="fixed inset-0 z-[100] bg-black/80 hidden items-center justify-center p-4 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto relative shadow-2xl scale-95 transition-transform duration-300 transform" id="modal-content-container">
+            <button id="close-modal" class="absolute top-4 right-4 w-10 h-10 bg-softbg hover:bg-softborder rounded-full flex items-center justify-center text-softtext transition-colors z-10">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            <div class="p-8 md:p-12">
+                <h3 id="modal-brand-title" class="text-2xl md:text-4xl font-serif text-softtext mb-8 text-center uppercase tracking-widest">Brand Name</h3>
+                <div id="modal-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Images will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modal Galerie Marques Logic
+        const brandGalleries = {
+            'ghazalsauf': [
+                { src: 'logo-ghazalsauf.png', title: 'Logo GHAZALSAUF', desc: 'Identité visuelle principale' },
+                { src: 'mockup-ghazalsauf.png', title: 'Packaging Box', desc: 'Mockup de la boîte premium' }
+            ]
+        };
+
+        const modal = document.getElementById('brand-modal');
+        const modalContent = document.getElementById('modal-content-container');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalGallery = document.getElementById('modal-gallery');
+        const modalTitle = document.getElementById('modal-brand-title');
+        
+        const openModal = (brandKey) => {
+            const data = brandGalleries[brandKey];
+            if (!data) return;
+            
+            modalTitle.textContent = brandKey;
+            modalGallery.innerHTML = data.map(item => `
+                <div class="flex flex-col bg-softbg rounded-xl overflow-hidden border border-softborder group">
+                    <div class="w-full h-64 md:h-80 bg-white flex items-center justify-center p-4">
+                        <img src="${item.src}" alt="${item.title}" class="max-w-full max-h-full object-contain drop-shadow-sm group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-serif font-medium text-softtext text-lg">${item.title}</h4>
+                        <p class="text-softertext text-sm font-light">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            void modal.offsetWidth; // Trigger reflow
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            document.body.style.overflow = 'hidden';
+        };
+        
+        const closeModal = () => {
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        };
+
+        document.querySelectorAll('.brand-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const brand = card.getAttribute('data-brand');
+                openModal(brand);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
         // Menu mobile
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
